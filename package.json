@@ -1,0 +1,14 @@
+{
+  "name": "Menu-Evex7",
+  "version": "1.0.0",
+  "description": "Projeto de ponta a ponta no Evex7 ",
+  "main": "index.js",
+  "author": "Wesley Gomes",
+  "license": "MIT",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "allure-commandline": "^2.20.1",
+    "cypress": "^12.3.0",
+    "http-server": "^14.1.1"
+  }
+}

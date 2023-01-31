@@ -1,0 +1,55 @@
+[
+    {
+        "cnpjFornecedor": "99144129000130",
+        "razaoSocial": "Fátima e Henrique Transportes ME",
+        "nomeFantasia": "Fátima e Henrique Transportes ME",
+        "inscEstadual": "542461604229",
+
+        "contatoFornecedor": "Fátima e Henrique Transportes ME",
+        "telefoneFornecedor": "319988744522",
+        "emailFornecedor": "manutencao@agathaejoanalavanderialtda.com.br",
+
+        "cepFornecedor": "35931089",
+        "numeroFornecedor": "5",
+        "complementoFornecedor": "sdfasdqwt",
+
+        "titular": "Fátima e Henrique Transportes ME",
+        "cnpjCpf": "99144129000130",
+        "numeroContaFornecedor": "5443",
+        "digitoContaFornecedor": "34", 
+        "numeroAgenciaFornecedor": "5654634",
+        "digitoAgenciaFornecedor": "32",
+
+        "nomeRegistroSusep": "Fátima e Henrique Transportes ME",
+        "numeroCertificado": "43654654635454364",
+        "cnpjRegistroSusep": "99144129000130",
+        "numeroApoliceSusep": "43254523454352345"
+    },
+
+    {
+        "cnpjFornecedor": "49007311000171",
+        "razaoSocial": "Vera e Valentina Mudanças ME",
+        "nomeFantasia": "Vera e Valentina Mudanças ME",
+        "inscEstadual": "6754074502080",
+
+        "contatoFornecedor": "Vera e Valentina Mudanças ME",
+        "telefoneFornecedor": "32992997643",
+        "emailFornecedor": "rh@veraevalentinamudancasme.com.br",
+
+        "cepFornecedor": "36200676",
+        "numeroFornecedor": "4352",
+        "complementoFornecedor": "dsafdsfas",
+
+        "titular": "Vera e Valentina Mudanças ME",
+        "cnpjCpf": "49007311000171",
+        "numeroContaFornecedor": "4232",
+        "digitoContaFornecedor": "23", 
+        "numeroAgenciaFornecedor": "676456",
+        "digitoAgenciaFornecedor": "12",
+
+        "nomeRegistroSusep": "Vera e Valentina Mudanças ME",
+        "numeroCertificado": "343453425432",
+        "cnpjRegistroSusep": "49007311000171",
+        "numeroApoliceSusep": "43254523454352345"
+    }
+]

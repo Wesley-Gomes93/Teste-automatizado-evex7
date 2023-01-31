@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"dfceaa6198113321e98544a60a26ad0e","name":"EVEX7 test","statistic":{"failed":7,"broken":0,"skipped":1,"passed":83,"unknown":0,"total":91}},{"uid":"413c562cb0c0fdc4340ffad5626d63d5","name":"cypress/e2e/solicitacoes/consultoria-juridica.cy.js","statistic":{"failed":0,"broken":2,"skipped":0,"passed":0,"unknown":0,"total":2}}]}

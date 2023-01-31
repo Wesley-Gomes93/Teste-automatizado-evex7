@@ -1,0 +1,19 @@
+[
+    {
+        "cargoProposto": "DEVOPS",
+        "salarioProposto": "15000",
+        "justificativa": "teste"
+    },
+
+    {
+        "cargoProposto": "QATESTER",
+        "salarioProposto": "25000",
+        "justificativa": "teste"
+    },
+    
+    {
+        "cargoProposto": "BACKEND",
+        "salarioProposto": "35000",
+        "justificativa": "teste"
+    }
+]

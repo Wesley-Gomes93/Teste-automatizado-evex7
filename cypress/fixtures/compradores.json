@@ -1,0 +1,24 @@
+[
+    {
+        "cnpjCompradores": "37562687000169",
+        "razaoSocial": "Emanuelly e Luiz Transportes ME",
+        "inscricaoSocial": "624913855086",
+        "cpf": "55557507060",
+        "nome": "Emanuelly e Lui",
+        "dataNascimento": "15081980",
+        "docIdentidade": "94385039",
+        "telefone1": "13989802078",
+        "telefone2": "13989802078",
+        "email": "financeiro@emanuellyeluiztransportesme.com.br",
+        "observacao": "Cypress.io, Cypress.io, Cypress.io, Cypress.io, Cypress.io, Cypress.io, Cypress.io,  ",
+        "cep": "30626610",
+        "numero": "233",
+        "complemento": "Apto 43 bloco C",
+        "titular": "cypress.io LTDA",
+        "cpfCnpj": "31027856039",
+        "numContaCompradores": "8765544",
+        "numDigitoContaCompradores": "22",
+        "numAgenciaCompradores": "4332",
+        "numDigitoAgenciaCompradores": "1"
+    }
+]

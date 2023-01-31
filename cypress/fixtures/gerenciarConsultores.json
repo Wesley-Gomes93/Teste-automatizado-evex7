@@ -1,0 +1,26 @@
+[
+    {
+        "cpf": "31770896040",
+        "nomeCompleto": "Wesley Cypress",
+        "dataNascimento": "12/12/1980",
+        "dataInicio": "01/05/2000",
+        "docIdentidade": "MG16549848",
+        "nomeContato": "Cypress de ltda",
+        "telefoneContato": "11999999999",
+        "celularContato": "11999999999",
+        "emailContato": "teste.cypress@gmail.com",
+        "instagram": "@cypress.com",
+        "facebook": "/cypress.facebook",
+        "whastappContatoPendencia": "11998888888",
+        "cep": "32016030",
+        "numero": "23333",
+        "complemento": "casa",
+        "titular": "Cypress Cypress",
+        "cpfCnpj": "476.013.960-53",
+        "numContaConsultor": "4322",
+        "numDigitoContaConsultor": "9",
+        "numAgenciaConsultor": "9877689",
+        "numDigitorAgenciaConsultor": "32",
+        "operacao": "013"
+    }
+]

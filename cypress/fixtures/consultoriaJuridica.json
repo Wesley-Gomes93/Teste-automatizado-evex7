@@ -1,0 +1,18 @@
+[
+    {
+        "detalheChamado": "Teste com cypressIO",
+        "protocolo": "202211230903363261"
+    },
+    {
+        "detalheChamado": "Teste com cypressIO 2",
+        "protocolo": "202255230903363261"
+    },
+    {
+        "detalheChamado": "Teste com cypressIO 3",
+        "protocolo": "202233230903363261"
+    },
+    {
+        "detalheChamado": "Teste com cypressIO 4",
+        "protocolo": "20222230903363261"
+    }
+]

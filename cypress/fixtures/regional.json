@@ -1,0 +1,24 @@
+[
+    {
+        "cnpj": "50638176000141",
+        "razaoSocial": "Giovanna e Martin Filmagens Ltda cy.cypressIO",
+        "inscEstadual": "740.584.037.050",
+        "nomeGestor": "Luciana Ruppin ",
+        "telefone": "31996588741",
+        "email": "sisdasfsdfasdtema@giovannaemartinfilmagensltda.com.br",
+        "observacao": "teste automatizado pelo cypress criando mais uma regional com a refatoração do cod",
+        "nomeContato": "Cy.cypressIO",
+        "celularContato": "319887744253",
+        "cep": "13040-510",
+        "numero": "dsa4r",
+        "complemento": "xcaxcdsafdsaf34123",
+        "titularBanco": "Giovanna e Martin Filmagens Ltda cy.cypressIO",
+        "cpfCnpj": "50638176000141",
+        "numeroConta" : "3524",
+        "numeroDigitoConta": "11",
+        "numeroAgencia" : "654871",
+        "numeroDigitoAgencia": "02",
+        "operacao": "013"
+
+    }
+]
