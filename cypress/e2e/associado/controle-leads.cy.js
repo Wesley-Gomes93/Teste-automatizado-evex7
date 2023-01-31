@@ -1,7 +1,6 @@
 ///<reference types="cypress"/>
 
 describe('EVEX7 test', () => {
-
     beforeEach(() => {
         // funcao pra ser inicializada sempre antes de todos os testes, 
         cy.clearLocalStorage()
@@ -31,7 +30,6 @@ describe('EVEX7 test', () => {
         it('Pesquisar Lead em Aberto', () => {
             cy.acaoPesquisarLeadAberto()
         })
-
     })
 
     context('Cadastrar um Novo Lead', () => {

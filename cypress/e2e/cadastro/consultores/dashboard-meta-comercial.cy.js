@@ -15,4 +15,5 @@ describe('EVEX7 test', () => {
     it('Cadastro - Consultor - Dashboard Meta Comercial - Pesquisar', () => {
         cy.acaoDashboardMetaComercialPesquisar()
     })
+    
 })

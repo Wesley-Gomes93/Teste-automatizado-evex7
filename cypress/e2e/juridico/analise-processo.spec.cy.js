@@ -13,7 +13,6 @@ describe('EVEX7 test', () => {
         cy.get('.menu-button > .pi').click()
         cy.wait(500)
     })
-
     describe('Ações Basicas', () => {
         it('Juridico - Analise de Processos - Pesquisar', () => {
             cy.acaoPesquisarAnaliseProcesso()

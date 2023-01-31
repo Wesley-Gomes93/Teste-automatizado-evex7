@@ -32,11 +32,4 @@ describe('EVEX7 test', () => {
             cy.acaoNegarAtualizacaoCadastral()
         })
     })
-
-    context('', () => { })
-
-
-
-
-
 })

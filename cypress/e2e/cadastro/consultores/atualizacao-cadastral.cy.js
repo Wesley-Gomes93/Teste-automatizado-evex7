@@ -14,7 +14,6 @@ describe('EVEX7 test', () => {
         cy.wait(500)
     })
 
-
     context('Ações basicas', () => {
         it('Atualizacao Cadastral - Pesquisar', () => {
             cy.acaoPesquisarAtualizacaoCadastral()
