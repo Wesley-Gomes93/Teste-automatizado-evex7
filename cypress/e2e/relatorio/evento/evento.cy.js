@@ -11,7 +11,7 @@ describe('EVEX7 test', () => {
         cy.get('.menu-button > .pi').click()
         cy.wait(500)
     })
-    it('Produtos PAP - ', () => {
+    it('Relatorio - Evento - Pesquisar', () => {
         cy.acaoPesquisarRelatorioEvento()
     })
 
