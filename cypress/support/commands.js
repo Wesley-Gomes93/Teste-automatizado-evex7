@@ -951,3 +951,458 @@ Cypress.Commands.add('acaoLimparAnaliseProcesso', () => {
     cy.wait(500)
     cy.get('button[id="limpar"]').click()
 })
+
+Cypress.Commands.add('acaoIndicadores', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuIndicadores"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuIndicadores"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoRelatorioAvulso', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuRelatoriosAvulsos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuRelatoriosAvulsos"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoPesquisarAnaliseMovimentacaoVeiculos', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuAnaliseMovimentoVeiculos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAnaliseMovimentoVeiculos"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicial_input"]').click()
+    cy.get('input[id="dataInicial_input"]').clear().type('01012022')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(6) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoPesquisarGestaoFinanceiraRegioanl', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuGestaoFinanceiraRegional"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuGestaoFinanceiraRegional"]').click()
+    cy.wait(500)
+    cy.get('input[id="regionais_input"]').type('mg')
+    cy.get('tr[data-item-label="MG.20"]').click()
+    cy.get('button[id="pesquisarRegionais"]').click()
+})
+
+Cypress.Commands.add('acaoLimparGestaoFinanceiraRegioanl', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuGestaoFinanceiraRegional"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuGestaoFinanceiraRegional"]').click()
+    cy.wait(500)
+    cy.get('input[id="regionais_input"]').type('mg')
+    cy.get('tr[data-item-label="MG.20"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarRegionais"]').click()
+    cy.wait(500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('gerarEvolucaoRecebimento', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuAnaliseRecebimentos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAnaliseRecebimentos"]').click()
+    cy.wait(500)
+    cy.get("#j_idt355\\:mes > div.ui-selectlistbox-listcontainer > ul > li:nth-child(2) > div > div").click()
+    cy.get("#j_idt355\\:mes > div.ui-selectlistbox-listcontainer > ul > li:nth-child(3) > div > div").click()
+    cy.get('button[id="j_idt355:gerar"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarAnaliseCarteira', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuAnaliseRecebimentos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAnaliseRecebimentos"]').click()
+    cy.wait(500)
+    cy.get('a[href="#j_idt355:j_idt389"]').click()
+    cy.wait(1000)
+    cy.get('button[id="j_idt355:pesquisarAnaliseCarteira"]').click()
+})
+
+Cypress.Commands.add('acaoLimparAnaliseCarteira', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuAnaliseRecebimentos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAnaliseRecebimentos"]').click()
+    cy.wait(500)
+    cy.get('a[href="#j_idt355:j_idt389"]').click()
+    cy.wait(500)
+    cy.get('button[id="j_idt355:pesquisarAnaliseCarteira"]').click()
+    cy.wait(500)
+    cy.get('button[id="j_idt355:limparPesquisaAba2"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarAssociado', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuAssociados"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAssociados"]').click()
+    cy.wait(500)
+    cy.get('input[id="dtInicial_input"]').click()
+    cy.get('input[id="dtInicial_input"]').type('01112022')
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dtFinal_input"]').click()
+    cy.get('input[id="dtFinal_input"]').type('31122022')
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(6) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(6) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarAssociado"]').click()
+})
+
+Cypress.Commands.add('acaoLimparAssociado', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuAssociados"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAssociados"]').click()
+    cy.wait(500)
+    cy.get('input[id="dtInicial_input"]').click()
+    cy.get('input[id="dtInicial_input"]').type('01112022')
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dtFinal_input"]').click()
+    cy.get('input[id="dtFinal_input"]').type('31122022')
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(6) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(6) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarAssociado"]').click()
+    cy.wait(1500)
+    cy.get('#limparPesquisa > .ui-button-text').click()
+})
+
+Cypress.Commands.add('acaoPesquisarVeiculoRelatorio', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuVeiculos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuVeiculos"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoLimparVeiculoRelatorio', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuVeiculos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuVeiculos"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.wait(500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarVeiculoOficina', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuVeiculosOficina"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuVeiculosOficina"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarVeiculo"]').click()
+})
+
+Cypress.Commands.add('acaoLimparVeiculoOficina', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuVeiculosOficina"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuVeiculosOficina"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.wait(500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoDirecVeiculosPesquisar', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuDirecVeiculos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuDirecVeiculos"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoDirecVeiculosLimpar', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuDirecVeiculos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuDirecVeiculos"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.wait(4500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoContatoAssociadoPesquisar', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuContatoAssociado"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuContatoAssociado"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicialFiltro_input"]').click()
+    cy.get('input[id="dataInicialFiltro_input"]').type('01072022')
+    cy.get("#dataInicialFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(5) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dataInicialFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(5) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dataFinalFiltro_input"]').click()
+    cy.get('input[id="dataFinalFiltro_input"]').type('30092022')
+    cy.get("#dataFinalFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(5) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dataFinalFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(5) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoContatoAssociadoLimpar', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuContatoAssociado"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuContatoAssociado"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicialFiltro_input"]').click()
+    cy.get('input[id="dataInicialFiltro_input"]').type('01072022')
+    cy.get("#dataInicialFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(5) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dataInicialFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(5) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dataFinalFiltro_input"]').click()
+    cy.get('input[id="dataFinalFiltro_input"]').type('30092022')
+    cy.get("#dataFinalFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(5) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dataFinalFiltro_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(5) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+    cy.get('button[id="limpar"]').click()
+
+})
+
+Cypress.Commands.add('acaoConsultarAtividadePesquisar', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuConsultarAtividades"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuConsultarAtividades"]').click()
+    cy.wait(500)
+    cy.get('input[id="dia_input"]').click()
+    cy.get('input[id="dia_input"]').type('01082022')
+    cy.get("#dia_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(1) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#dia_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(1) > a").click()
+    cy.wait(500)
+    cy.get('input[id="diaComparar_input"]').click()
+    cy.get('input[id="diaComparar_input"]').type('30122022')
+    cy.get("#diaComparar_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(5) > a").should('be.visible').then(() => { cy.wait(500) });
+    cy.get("#diaComparar_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(5) > a").click()
+    cy.wait(500)
+
+    cy.get('label[id="usuario_label"]').click()
+    cy.wait(500)
+    cy.get('li[data-label="JUCIMAR FERREIRA DE SOUZA"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+
+})
+
+Cypress.Commands.add('acaoPesquisarProutosVeiculo', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuProdutos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutos"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuProdutosVeiculo"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutosVeiculo"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicial_input"]').click()
+    cy.get('input[id="dataInicial_input"]').type('01012023')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(7) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dataFinal_input"]').click()
+    cy.get('input[id="dataFinal_input"]').type('01022023')
+    cy.get("#dataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td.ui-datepicker-today > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoLimparProutosVeiculo', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuProdutos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutos"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuProdutosVeiculo"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutosVeiculo"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicial_input"]').click()
+    cy.get('input[id="dataInicial_input"]').type('01012023')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(7) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dataFinal_input"]').click()
+    cy.get('input[id="dataFinal_input"]').type('01022023')
+    cy.get("#dataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td.ui-datepicker-today > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarProdutosAssociado', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuProdutos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutos"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuProdutosAssociado"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutosAssociado"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicial_input"]').click()
+    cy.get('input[id="dataInicial_input"]').type('01112022')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dataFinal_input"]').click()
+    cy.get('input[id="dataFinal_input"]').type('01012023')
+    cy.get("#dataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(7) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoLimparProdutosAssociado', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuProdutos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutos"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuProdutosAssociado"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutosAssociado"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicial_input"]').click()
+    cy.get('input[id="dataInicial_input"]').type('01112022')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dataFinal_input"]').click()
+    cy.get('input[id="dataFinal_input"]').type('01012023')
+    cy.get("#dataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(7) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoLimparProdutosAssociado', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuProdutos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutos"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuProdutosAssociado"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutosAssociado"]').click()
+    cy.wait(500)
+    cy.get('input[id="dataInicial_input"]').click()
+    cy.get('input[id="dataInicial_input"]').type('01112022')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dataFinal_input"]').click()
+    cy.get('input[id="dataFinal_input"]').type('01012023')
+    cy.get("#dataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(7) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoProdutosPap', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuProdutos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutos"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuProdutosPap"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutosPap"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoPrudotoFunerario', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuProdutos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutos"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuProdutosFunerario"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuProdutosFunerario"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRelatorioEvento', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuEvento"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuEvento"]').click()
+    cy.wait(500)
+    cy.get('input[id="calendarDataInicio_input"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarSinistro"]').click()
+})
+
