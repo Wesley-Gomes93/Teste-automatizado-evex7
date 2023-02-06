@@ -31,6 +31,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('Espera', () => {
+    
+    cy.wait(500).as('esperar')
+})
 
 Cypress.Commands.add('login', (nome, senha) => {
     cy.get('input[id="loginInpt"]').type(nome)
@@ -1402,7 +1406,175 @@ Cypress.Commands.add('acaoPesquisarRelatorioEvento', () => {
     cy.get('li[id="menuform:btnMenuEvento"]').click()
     cy.wait(500)
     cy.get('input[id="calendarDataInicio_input"]').click()
+    cy.get('input[id="calendarDataInicio_input"]').type('01012023')
+    cy.get("#calendarDataInicio_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(7) > a").click()
+    cy.wait(500)
+    cy.get('input[id="calendarDataFinal_input"]').click()
+    cy.get('input[id="calendarDataFinal_input"]').type('01032023')
+    cy.get("#calendarDataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(3) > a").click()
     cy.wait(500)
     cy.get('button[id="pesquisarSinistro"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRelatorioOrçamento', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuOrcamentos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuOrcamentos"]').click()
+    cy.wait(500)
+    cy.get('input[id="calendarDataInicio_input"]').click()
+    cy.get('input[id="calendarDataInicio_input"]').type('01112022')
+    cy.get("#calendarDataInicio_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="calendarDataFinal_input"]').click()
+    cy.get('input[id="calendarDataFinal_input"]').type('28022023')
+    cy.get("#calendarDataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarSinistro"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRelatorioCarroReserva', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuCarroReserva"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuCarroReserva"]').click()
+    cy.wait(500)
+    cy.get('button[id="pesquisarSinistro"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRelatorioSindicanciaEvento', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuEventosRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuSindicanciaEvento"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuSindicanciaEvento"]').click()
+    cy.wait(500)
+    cy.get('input[id="calendarDataInicio_input"]').click()
+    cy.get('input[id="calendarDataInicio_input"]').type('01112022')
+    cy.get("#calendarDataInicio_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(4) > a").click()
+    cy.wait(500)
+    cy.get('input[id="calendarDataFinal_input"]').click()
+    cy.get('input[id="calendarDataFinal_input"]').type('28022023')
+    cy.get("#calendarDataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(2) > a").click()
+    cy.wait(500)    
+    cy.get('button[id="pesquisarSinistro"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRelatorioAssistenciaOrcamento', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuAssistenciaRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAssistenciaRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuAssistenciaOrcamentos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAssistenciaOrcamentos"]').click()
+    cy.wait(500)    
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRelatorioAssistenciaSituacao', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuAssistenciaRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuAssistenciaRelatorios"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnMenuSituacao"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuSituacao"]').click()
+    cy.wait(500)    
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRelatorioRastreador', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuRastreadorRelatorio"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuRastreadorRelatorio"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoPesquisarTitulosEmitidos', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuTitulosEmit"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuTitulosEmit"]').click()
+    cy.wait(500)
+    cy.get('input[id="dtInicial_input"]').click()
+    cy.get('input[id="dtInicial_input"]').type('01112022')
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dtFinal_input"]').click()
+    cy.get('input[id="dtFinal_input"]').type('28022023')
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarTitulosRecebidos', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuTitulosRecebidos"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuTitulosRecebidos"]').click()
+    cy.wait(500)
+    cy.get('input[id="dtInicial_input"]').click()
+    cy.get('input[id="dtInicial_input"]').type('01112022')
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('input[id="dtFinal_input"]').click()
+    cy.get('input[id="dtFinal_input"]').type('28022023')
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(2) > a").click()
+    cy.wait(500)
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarEstatisticasGerencial', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuEstatisticasGerencial"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuEstatisticasGerencial"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRankingConsultores', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuRankingConsultores"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuRankingConsultores"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarCarteira', () => {
+    cy.wait(500)
+    cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuRelatorios"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuCarteira"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuCarteira"]').click() 
+    cy.get('button[id="pesquisar"]').click()
 })
 

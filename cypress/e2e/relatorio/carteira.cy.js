@@ -11,10 +11,16 @@ describe('EVEX7 test', () => {
         cy.get('.menu-button > .pi').click()
         cy.wait(500)
     })
-    
-    describe('Ações Basicas', () => {
-        it('Análise de movimentações veículos - Pesquisar', () => {
-            cy.acaoPesquisarAnaliseMovimentacaoVeiculos()
+
+    describe('Ações Basicas - Carteiras', () => {
+        it('Relatorio - Carteiras - Pesquisar', () => {
+            cy.acaoPesquisarCarteira()
+            cy.wait(900)            
+        })
+        it('Relatorio - Carteiras - Limpar', () => {
+            cy.acaoPesquisarCarteira()
+            cy.wait(900)    
+            cy.get('button[id="limparPesquisa"]').click()     
         })
     })
 })
