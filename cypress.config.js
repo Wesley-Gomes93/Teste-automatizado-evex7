@@ -6,12 +6,10 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       allureWriter(on, config);
-      
+
       return config;
     },
     projectId: "1d7yqc",
     baseUrl: 'http://localhost:8080/sav-web-1.0/',
-    defaultCommandTimeout: 10000,
-    
   },
 });
