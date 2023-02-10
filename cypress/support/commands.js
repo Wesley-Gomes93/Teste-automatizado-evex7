@@ -5,7 +5,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
 })
-
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -31,10 +30,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('Espera', () => {
-    
-    cy.wait(500).as('esperar')
-})
 
 Cypress.Commands.add('login', (nome, senha) => {
     cy.get('input[id="loginInpt"]').type(nome)
@@ -1470,7 +1465,7 @@ Cypress.Commands.add('acaoPesquisarRelatorioSindicanciaEvento', () => {
     cy.get('input[id="calendarDataFinal_input"]').click()
     cy.get('input[id="calendarDataFinal_input"]').type('28022023')
     cy.get("#calendarDataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(2) > a").click()
-    cy.wait(500)    
+    cy.wait(500)
     cy.get('button[id="pesquisarSinistro"]').click()
 })
 
@@ -1484,7 +1479,7 @@ Cypress.Commands.add('acaoPesquisarRelatorioAssistenciaOrcamento', () => {
     cy.wait(500)
     cy.get('li[id="menuform:btnMenuAssistenciaOrcamentos"]').should('be.visible').then(() => { cy.wait(500) });
     cy.get('li[id="menuform:btnMenuAssistenciaOrcamentos"]').click()
-    cy.wait(500)    
+    cy.wait(500)
     cy.get('button[id="pesquisar"]').click()
 })
 
@@ -1498,7 +1493,7 @@ Cypress.Commands.add('acaoPesquisarRelatorioAssistenciaSituacao', () => {
     cy.wait(500)
     cy.get('li[id="menuform:btnMenuSituacao"]').should('be.visible').then(() => { cy.wait(500) });
     cy.get('li[id="menuform:btnMenuSituacao"]').click()
-    cy.wait(500)    
+    cy.wait(500)
     cy.get('button[id="pesquisar"]').click()
 })
 
@@ -1536,7 +1531,7 @@ Cypress.Commands.add('acaoPesquisarTitulosRecebidos', () => {
     cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
     cy.get('li [id="menuform:btnMenuRelatorios"]').click()
     cy.wait(450)
-    cy.get('li[id="menuform:btnMenuTitulosRecebidos"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuTitulosRecebidos"]').scrollIntoView({ durantion: 200 }).should('be.visible').then(() => { cy.wait(500) });
     cy.get('li[id="menuform:btnMenuTitulosRecebidos"]').click()
     cy.wait(500)
     cy.get('input[id="dtInicial_input"]').click()
@@ -1555,7 +1550,7 @@ Cypress.Commands.add('acaoPesquisarEstatisticasGerencial', () => {
     cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
     cy.get('li [id="menuform:btnMenuRelatorios"]').click()
     cy.wait(450)
-    cy.get('li[id="menuform:btnMenuEstatisticasGerencial"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuEstatisticasGerencial"]').scrollIntoView({ durantion: 200 }).should('be.visible').then(() => { cy.wait(500) });
     cy.get('li[id="menuform:btnMenuEstatisticasGerencial"]').click()
 })
 
@@ -1564,7 +1559,7 @@ Cypress.Commands.add('acaoPesquisarRankingConsultores', () => {
     cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
     cy.get('li [id="menuform:btnMenuRelatorios"]').click()
     cy.wait(450)
-    cy.get('li[id="menuform:btnMenuRankingConsultores"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuRankingConsultores"]').scrollIntoView({ durantion: 200 }).should('be.visible').then(() => { cy.wait(500) });
     cy.get('li[id="menuform:btnMenuRankingConsultores"]').click()
 })
 
@@ -1573,8 +1568,431 @@ Cypress.Commands.add('acaoPesquisarCarteira', () => {
     cy.get('li [id="menuform:btnMenuRelatorios"]').should('be.visible').then(() => { cy.wait(500) });
     cy.get('li [id="menuform:btnMenuRelatorios"]').click()
     cy.wait(450)
-    cy.get('li[id="menuform:btnMenuCarteira"]').scrollIntoView({durantion:200}).should('be.visible').then(() => { cy.wait(500) });
-    cy.get('li[id="menuform:btnMenuCarteira"]').click() 
+    cy.get('li[id="menuform:btnMenuCarteira"]').scrollIntoView({ durantion: 200 }).should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuCarteira"]').click()
     cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarTitulosEmitidos', () => {
+    cy.wait(950)
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.wait(950)
+    cy.get('label[id="empresa_label"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('label[id="empresa_label"]').click()
+    cy.get('li[data-label="AGV Brasil"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[data-label="AGV Brasil"]').click()
+    cy.wait(950)
+    cy.get('input[id="dtInicial_input"]').click()
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(6) > a").click()
+    cy.get('input[id="dtFinal_input"]').click()
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(3) > td:nth-child(6) > a").click()
+    cy.wait(950)
+    cy.get('button[id="pesquisar"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoPesquisarTitulosExcluidos', () => {
+    cy.wait(950)
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.wait(950)
+    cy.get('label[id="empresa_label"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('label[id="empresa_label"]').click()
+    cy.get('li[data-label="AGV Brasil"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[data-label="AGV Brasil"]').click()
+    cy.wait(950)
+    cy.get('input[id="dtInicial_input"]').click()
+    cy.get("#dtInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(6) > a").click()
+    cy.get('input[id="dtFinal_input"]').click()
+    cy.get("#dtFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(3) > td:nth-child(6) > a").click()
+    cy.wait(950)
+    cy.get('button[id="pesquisarExcluidos"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('button[id="pesquisarExcluidos"]').click()
+    cy.wait(500)
+})
+
+Cypress.Commands.add('acaoPesquisarCadastrarTituloEmitidos', () => {
+    cy.wait(950)
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.wait(450)
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.wait(950)
+    cy.get('button[id="incluirMensalidade"]').click()
+    cy.wait(500)
+    cy.get('input[id="autocompletevar_input"]').click().type('hkd4493')
+    cy.get('li[data-item-label="HKD4493 (HKD4E93) - GILBERT VINICIUS FERREIRA DOS SANTOS - 101.441.756-22 - Ativo"]').click()
+    cy.wait(500)
+    cy.get('label[id="comboContaBancaria_label"]').click()
+    cy.get('li[data-label="Universo AGV-Sicoob UNIVERSO - Ag: 40924 - Cc: 182710"]').click()
+    cy.wait(500)
+    cy.get('input[id="valor"]').click().type('150,11')
+    cy.wait(500)
+    cy.get('input[id="dataContrato_input"]').click()
+    cy.get('input[id="dataContrato_input"]').type('07022023')
+    cy.get("#dataContrato_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(2) > td:nth-child(2) > a").click()
+    cy.get('button[id="btnSalvarMensalidade"]').click()
+
+})
+
+Cypress.Commands.add('acaoGerarBoleto', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:linkBoletoNovo"]').click()
+})
+
+Cypress.Commands.add('acaoRegistrarPagamento', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:addPagamento"]').click()
+})
+
+Cypress.Commands.add('acaoEditarValoresBoleto', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:j_idt471"]').click()
+})
+
+Cypress.Commands.add('acaoEditar', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:j_idt472"]').click({ force: true });
+})
+
+Cypress.Commands.add('acaoVisualizarTitulo', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get('a[id="tabelaMensalidades:0:pesquisarPagamento"]').click({ force: true });
+})
+
+Cypress.Commands.add('acaoEditarMensagens', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get('a[id="tabelaMensalidades:0:editarMensagensBoleto"]').click({ force: true });
+})
+
+Cypress.Commands.add('acaoExcluirBoleto', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get("#tabelaMensalidades\\:0\\:botoes_menu > ul > li:nth-child(3) > a").click({ force: true });
+})
+
+Cypress.Commands.add('acaoDetalharMensalidade', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get("#tabelaMensalidades\\:0\\:botoes_menu > ul > li:nth-child(4) > a").click({ force: true });
+})
+
+Cypress.Commands.add('acaoHistoricoVeiculo', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get("#tabelaMensalidades\\:0\\:btnHistorico").click({ force: true });
+})
+
+Cypress.Commands.add('acaoEnviarBoletoEmail', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get('button[id="tabelaMensalidades:0:emailBoleto"]').click({ force: true });
+})
+
+Cypress.Commands.add('acaoEnviarAprovção', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get('a[id="tabelaMensalidades:0:btEnviarAprovacao"]').click({ force: true });
+})
+
+Cypress.Commands.add('acaoDownloadBoleto', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get('a[id="tabelaMensalidades:0:linkBoletoNovoPermanente"]').click({ force: true });
+})
+
+Cypress.Commands.add('acaoEnviarSMS', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTituloEmiti"]').click()
+    cy.get('input[id="placa"]').click()
+    cy.get('input[id="placa"]').type('HKD4493')
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaMensalidades:0:botoes_button"]').click({ force: true });
+    cy.get('a[id="tabelaMensalidades:0:btnEnviarSms"]').click({ force: true });
+})
+
+Cypress.Commands.add('acaoPesquisarCobranca', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuCobranca"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuCobranca"]').click()
+    cy.get('button[id="pesquisarContato"]').click()
+})
+
+Cypress.Commands.add('acaoTelaDesconto', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuDesconto"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuDesconto"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarDesconto', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuDesconto"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuDesconto"]').click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoLimparDesconto', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuDesconto"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuDesconto"]').click()
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoEditarDesconto', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuDesconto"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuDesconto"]').click()
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaGr:0:j_idt425"]').click()
+})
+
+Cypress.Commands.add('acaoExcluirDesconto', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuDesconto"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuDesconto"]').click()
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="tabelaGr:0:j_idt426"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarPromocao', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuPromocao"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuPromocao"]').click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoLimparPromocao', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuPromocao"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuPromocao"]').click()
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="limparPesquisa"]').should('be.visible').click()
+})
+
+Cypress.Commands.add('acaoIncluirPromocao', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuPromocao"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuPromocao"]').click()
+    cy.get('button[id="incluirPromocao"]').should('be.visible').click()
+})
+
+Cypress.Commands.add('acaoPesquisarRateio', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuLancamentoRateio"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuLancamentoRateio"]').click()
+    cy.get('button[id="pesquisarLancamento"]').click()
+})
+
+Cypress.Commands.add('acaoCadastrarRateio', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuLancamentoRateio"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuLancamentoRateio"]').click()
+    cy.get('button[id="incluirLancamento"]').click()
+})
+
+Cypress.Commands.add('acaoEditarRateio', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuLancamentoRateio"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuLancamentoRateio"]').click()
+    cy.get('button[id="tabelaLancamentos:0:j_idt365"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarArquivoRemessa', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuArquivosBancarios"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuArquivosBancarios"]').click()
+    cy.get('li[id="menuform:btnMenuArquivoRemessa"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuArquivoRemessa"]').click()
+    cy.get('input[id="dtInicial_input"]').click().type('09102022')
+    cy.get('input[id="dtFinal_input"]').click().type('09112022')
+    cy.get('label[id="empresaRemessa_label"]').click()
+    cy.get('li[data-label="Universo AGV"]').click()
+    cy.get('label[id="comboContaBancaria_label"]').click()
+    cy.get('li[id="comboContaBancaria_9"]').click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoLimparArquivoRemessa', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuArquivosBancarios"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuArquivosBancarios"]').click()
+    cy.get('li[id="menuform:btnMenuArquivoRemessa"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuArquivoRemessa"]').click()
+    cy.get('input[id="dtInicial_input"]').click().type('09102022')
+    cy.get('input[id="dtFinal_input"]').click().type('09112022')
+    cy.get('label[id="empresaRemessa_label"]').click()
+    cy.get('li[data-label="Universo AGV"]').click()
+    cy.get('label[id="comboContaBancaria_label"]').click()
+    cy.get('li[id="comboContaBancaria_9"]').click()
+    cy.get('button[id="pesquisar"]').click()
+    cy.get('button[id="limparPesquisa"]').should('not.have.class', 'hidden').click()
+})
+
+Cypress.Commands.add('acaoFechamentoPesquisar', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuFechamento"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFechamento"]').click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoFechamentoNovo', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuFechamento"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuFechamento"]').click()
+    cy.get('button[id="novo"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarInadimplente', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuInadimplentes"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuInadimplentes"]').click()
+    cy.get('input[id="dataInicial_input"]').should('be.visible')
+    cy.get('input[id="dataInicial_input"]').click().type('01112022')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.get('input[id="dataFinal_input"').should('be.visible')
+    cy.get('input[id="dataFinal_input"').click().type('31122022')
+    cy.get("#dataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(5) > td:nth-child(6) > a").click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoCobrancaTerceirizadaPesquisar', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuCobrancaTerceirizada"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuCobrancaTerceirizada"]').click()
+    cy.get('input[id="dataInicial_input"]').should('be.visible')
+    cy.get('input[id="dataInicial_input"]').click().type('01112022')
+    cy.get("#dataInicial_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click()
+    cy.get('input[id="dataFinal_input"]').should('be.visible')
+    cy.get('input[id="dataFinal_input"]').click().type('01022023')
+    cy.get("#dataFinal_panel > div > div.ui-datepicker-calendar-container > table > tbody > tr:nth-child(1) > td:nth-child(3) > a").click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoTermoExpansaoPesquisar', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTermosExpansao"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTermosExpansao"]').click()
+    cy.get('button[id="pesquisarBotao"]').click()
+})
+
+Cypress.Commands.add('acaoTermoExpansaoLimpar', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTermosExpansao"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTermosExpansao"]').click()
+    cy.get('button[id="pesquisarBotao"]').click()
+    cy.get('button[id="limparBotao"]').click()
+})
+
+Cypress.Commands.add('acaoTermoExpansaoNovo', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:btnMenuTermosExpansao"]').should('be.visible')
+    cy.get('li[id="menuform:btnMenuTermosExpansao"]').click()
+    cy.get('button[id="j_idt365"]').click()
 })
 
