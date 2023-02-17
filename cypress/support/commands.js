@@ -493,7 +493,7 @@ Cypress.Commands.add('acaoEditarCupom', () => {
 
 Cypress.Commands.add('acaoConsultarAssociado', () => {
     cy.wait(500)
-    cy.get('li [id="menuform:btnMenuAssociado"]').should('be.visible').then(() => { cy.wait(500) });
+    cy.get('li [id="menuform:btnMenuAssociado"]').should('be.visible')
     cy.get('li [id="menuform:btnMenuAssociado"]').click()
     cy.wait(500)
     cy.get('li [id="menuform:btnMenuConsultarAssociado"]').should('be.visible').then(() => { cy.wait(500) });
@@ -1994,5 +1994,93 @@ Cypress.Commands.add('acaoTermoExpansaoNovo', () => {
     cy.get('li[id="menuform:btnMenuTermosExpansao"]').should('be.visible')
     cy.get('li[id="menuform:btnMenuTermosExpansao"]').click()
     cy.get('button[id="j_idt365"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarDevolucaoBoleto', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:devBoleto"]').should('be.visible')
+    cy.get('li[id="menuform:devBoleto"]').click()
+    cy.get('button[id="pesquisarBotao"]').click()
+})
+
+Cypress.Commands.add('acaoLimparDevolucaoBoleto', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:devBoleto"]').should('be.visible')
+    cy.get('li[id="menuform:devBoleto"]').click()
+    cy.get('button[id="pesquisarBotao"]').click()
+    cy.wait(4060)
+    cy.get('button[id="limparBotao"]').click()
+})
+
+Cypress.Commands.add('acaoEditarDevolucaoBoleto', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:devBoleto"]').should('be.visible')
+    cy.get('li[id="menuform:devBoleto"]').click()
+    cy.get('button[id="pesquisarBotao"]').click()
+    cy.wait(4060)
+    cy.get('button[id="tabelaDevolucoes:0:j_idt413"]').click()
+})
+
+Cypress.Commands.add('acaoCadastrarDevolucaoBoleto', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:devBoleto"]').should('be.visible')
+    cy.get('li[id="menuform:devBoleto"]').click()
+    cy.get('button[id="j_idt390"]').click()
+    cy.get('input[id="autocompletevar_input"]').click().type('123')
+    cy.get('li[data-item-label="EZO9873 (EZO9I73) - ADRIANA SANCHES RIBEIRO COSTA - 123.127.698-32 - Ativo"]').click()
+})
+
+Cypress.Commands.add('acaoCadastrarDevolucaoBoleto', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:devBoleto"]').should('be.visible')
+    cy.get('li[id="menuform:devBoleto"]').click()
+    cy.get('button[id="j_idt390"]').click()
+    cy.get('input[id="autocompletevar_input"]').click().type('123')
+    cy.get('li[data-item-label="EZO9873 (EZO9I73) - ADRIANA SANCHES RIBEIRO COSTA - 123.127.698-32 - Ativo"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisarControleReembolso', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get("#menuform\\:controleDocs").scrollIntoView({ duration: 250 }).should('be.visible')
+    cy.get("#menuform\\:controleDocs").click()
+    cy.get('label[id="empresa_label"]').should('be.visible')
+    cy.get('label[id="empresa_label"]').click()
+    cy.get('li[data-label="Universo AGV"]').should('be.visible')
+    cy.get('li[data-label="Universo AGV"]').click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoLimparControleReembolso', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get("#menuform\\:controleDocs").scrollIntoView({ duration: 250 }).should('be.visible')
+    cy.get("#menuform\\:controleDocs").click()
+    cy.get('label[id="empresa_label"]').should('be.visible')
+    cy.get('label[id="empresa_label"]').click()
+    cy.get('li[data-label="Universo AGV"]').should('be.visible')
+    cy.get('li[data-label="Universo AGV"]').click()
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoEditarControleReembolso', () => {
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible')
+    cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
+    cy.get("#menuform\\:controleDocs").scrollIntoView({ duration: 250 }).should('be.visible')
+    cy.get("#menuform\\:controleDocs").click()
+    cy.get('label[id="empresa_label"]').should('be.visible')
+    cy.get('label[id="empresa_label"]').click()
+    cy.get('li[data-label="Universo AGV"]').should('be.visible')
+    cy.get('li[data-label="Universo AGV"]').click()
+    cy.get('button[id="pesquisar"]').click()
+    cy.wait(500)
+    cy.get('button[id="tabelaSolicitacao:0:outrasAcoes_button"]').click()
 })
 

@@ -12,15 +12,24 @@ describe('EVEX7 test', () => {
         cy.wait(500)
     })
 
-    it('Devolucao de Boletos ', () => {
-        cy.wait(500)
-        cy.get('li [id="menuform:btnMenuFinanceiro"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li [id="menuform:btnMenuFinanceiro"]').click()
-        cy.wait(450)
-        cy.get('li[id="menuform:devBoleto"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li[id="menuform:devBoleto"]').click()
-        cy.wait(450)
-        cy.get('button[id="pesquisarBotao"]').click()
-        cy.wait(500)
+    describe('Ações Basicas ', () => {
+        it('Devolucao de Boletos - Pesquisar', () => {
+            cy.acaoPesquisarDevolucaoBoleto()
+        })
+        it('Devolucao de Boletos - Limpar', () => {
+            cy.acaoLimparDevolucaoBoleto()
+        })
+    })
+
+    describe('Cadastrar', () => {
+        it.only('Devolucao de Boletos - Limpar', () => {
+            cy.acaoCadastrarDevolucaoBoleto()
+        })
+    })
+
+    describe('Ações Editar', () => {
+        it('Devolucao de Boletos - Limpar', () => {
+            cy.acaoLimparDevolucaoBoleto()
+        })
     })
 })
