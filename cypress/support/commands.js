@@ -2084,3 +2084,99 @@ Cypress.Commands.add('acaoEditarControleReembolso', () => {
     cy.get('button[id="tabelaSolicitacao:0:outrasAcoes_button"]').click()
 })
 
+Cypress.Commands.add('acaoPesquisarEvento', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuControleEventos"]').click()
+    cy.get('input[id="placaFiltro"]').type('HKD1909')
+    cy.get('button[id="pesquisarVeiculo"]').click()
+})
+
+Cypress.Commands.add('acaoNovoEvento', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuControleEventos"]').click()
+    cy.get('button[id="incluirSinistro"]').click()
+    cy.get('button[id="btnCliente"]').click()
+    cy.get('input[id="placaCliente"]').type('QHO4217')
+    cy.get('button[id="btnPesquisar"]').click()
+    cy.get('label[id="motivoSinistro_label"]').click()
+    cy.wait(900)
+    cy.get('li[data-label="Colisão"]').click()
+    cy.get('label[id="j_idt4283"]').click()
+    cy.get('li[data-label="Sim"]').click()
+    cy.get('label[id="carroReservaCombo_label"]').click()
+    cy.get('li[id="carroReservaCombo_2"]').click()
+    cy.get('button[id="btnSalvarSinistro"]').click()
+})
+
+Cypress.Commands.add('acaoLimparEvento', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuControleEventos"]').click()
+    cy.get('input[id="placaFiltro"]').type('QHO4217')
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoPesquisar', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuAcompanhamentoOficina"]').click()
+    cy.get('input[id="placaChassi"]').type('OZE0374')
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    //cy.get('button[id="limparPesquisa"]').click()
+
+})
+
+Cypress.Commands.add('acaoLimpar', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuAcompanhamentoOficina"]').click()
+    cy.get('input[id="placaChassi"]').type('OZE0374')
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.get('button[id="limparPesquisa"]').click()
+})
+
+Cypress.Commands.add('acaoAcompanharOficina', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuAcompanhamentoOficina"]').click()
+    cy.get('input[id="placaChassi"]').type('OZE0374')
+    cy.get('button[id="pesquisarVeiculo"]').click()
+    cy.get('button[id="tabelaVeiculoAnalitico:0:outrasAcoes_button"]').click()
+    cy.get('a[id="tabelaVeiculoAnalitico:0:btnAbrirEventoAcompanhamentoContato"]').click()
+    cy.get('button[id="formModal:acompanhamentoOficina:novoAcompanhamento"]').click()
+    // cy.get('label[id="formModalEventoAcompanhamentoSituacao:situacaoNova_label"]').click()
+    // cy.get('li[data-label="Processo jurídico"]').click()
+    cy.get('button[id="formModalEventoAcompanhamentoSituacao:btnsalvarTrocaSituacao"]').click()
+    //aba inclusao de contato
+    cy.get('a[href="#formModal:acompanhamentoOficina:inclusaoContato"]').click()
+    cy.get('label[id="formModal:acompanhamentoOficina:tpContatoAcompanhamento_label"]').click()
+    cy.get('li[data-label="Evento"]').click()
+    cy.get('label[id="formModal:acompanhamentoOficina:tpOrigemContato_label"]').click()
+    cy.get('li[data-label="WhatsApp Avulso"]').click()
+    cy.get('button[id="formModal:acompanhamentoOficina:btnSalvarContato"]').click()
+    //aba inlcusao de arquivo
+    cy.get('a[href="#formModal:acompanhamentoOficina:j_idt491"]').click()
+})
+
+const tarefaEvento = require('../fixtures/tarefaEvento.json')
+tarefaEvento.forEach(tarefaEvento => {
+    Cypress.Commands.add('acaoCadastrarNovaTarefaEvento', () => {
+        cy.get('li [id="menuform:btnMenuEventos"]').should('be.visible')
+        cy.get('li [id="menuform:btnMenuEventos"]').click()
+        cy.get('li[id="menuform:btnMenuTarefaEvento"]').should('be.visible')
+        cy.get('li[id="menuform:btnMenuTarefaEvento"]').click()
+        cy.get('button[id="pesquisar"]').click()
+        cy.get('button[id="incluir"]').click()
+        cy.get('input[id="descricaoTipotarefa"]').type(tarefaEvento.descricao)
+        cy.get("#ativo").should('be.visible')
+        cy.get("#ativo").click()
+        cy.get('li[data-item-label="Incêndio"]').should('be.visible')
+        cy.get('li[data-item-label="Incêndio"]').dblclick()
+        cy.get('li[data-item-label="Roubo"]').should('be.visible')
+        cy.get('li[data-item-label="Roubo"]').dblclick()
+        cy.get('button[id="btnSalvar"]').click()
+    })
+})
+
+
+
+
+
+

@@ -25,3 +25,13 @@ describe('EVEX7 test', () => {
             cy.wait(500)
     })
 })
+
+
+
+
+  // cy.wait(700)
+    // cy.get('label[id="motivoSinistro_label"]').click().trigger('mouseover')
+    // cy.get('label[id="motivoSinistro_label"]').click().invoke('show').click({ force: true })
+    // cy.wait(700)
+    // cy.get('label[id="motivoSinistro_label"]').trigger('mouseup').click()
+    // cy.get('li[idata-label="Colisão"]')
