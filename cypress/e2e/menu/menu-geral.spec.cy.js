@@ -13,70 +13,70 @@ describe('EVEX7 test', () => {
         cy.wait(500)
     })
 
-    // it(' Menu Cadastro - Regional', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuRegional"]').click()
-    //     cy.get('button[id="pesquisarRegional"]').click()
-    // })
+    it(' Menu Cadastro - Regional', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuRegional"]').click()
+        cy.get('button[id="pesquisarRegional"]').click()
+    })
 
-    // it('Menu Cadastro - Consultores - Atualizacao Cadastral', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuConsultores"]').click()
-    //     cy.get('li[id="menuform:btnMenuAtualizacaoCadastral"]').click()
-    //     cy.get('button[id="pesquisarAtualizacaoConsultor"]').click()
-    // })
+    it('Menu Cadastro - Consultores - Atualizacao Cadastral', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuConsultores"]').click()
+        cy.get('li[id="menuform:btnMenuAtualizacaoCadastral"]').click()
+        cy.get('button[id="pesquisarAtualizacaoConsultor"]').click()
+    })
 
-    // it('Menu Cadastro - Consultores - Gerenciar Consultores', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuConsultores"]').click()
-    //     cy.get('li[id="menuform:btnMenuGerenciarConsultores"]').click()
-    //     cy.get('button[id="pesquisarConsultor"]').click()
-    // })
+    it('Menu Cadastro - Consultores - Gerenciar Consultores', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuConsultores"]').click()
+        cy.get('li[id="menuform:btnMenuGerenciarConsultores"]').click()
+        cy.get('button[id="pesquisarConsultor"]').click()
+    })
 
-    // it('Menu Cadastro - Fornecedores', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuFornecedores"]').click()
-    //     cy.get('button[id="tabFiltros:pesquisarFornecedor"]').click()
-    // })
+    it('Menu Cadastro - Fornecedores', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuFornecedores"]').click()
+        cy.get('button[id="tabFiltros:pesquisarFornecedor"]').click()
+    })
 
-    // it('Menu Cadastro - Compradores', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuCompradores"]').click()
-    //     cy.get('button[id="pesquisarComprador"]').click()
-    // })
+    it('Menu Cadastro - Compradores', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuCompradores"]').click()
+        cy.get('button[id="pesquisarComprador"]').click()
+    })
 
-    // it('Menu Cadastro - Usuario', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnUsuarios"]').click()
-    //     cy.get('button[id="pesquisarUsuario"]').click()
-    // })
+    it('Menu Cadastro - Usuario', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnUsuarios"]').click()
+        cy.get('button[id="pesquisarUsuario"]').click()
+    })
 
-    // it(' Menu Cadastro - Meta Comercial', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuConsultores"]').click()
-    //     cy.get('li[id="menuform:btnMetaComercial"]').click()
-    //     cy.get('button[id="Pesquisar"]').click()
-    //     cy.get('button[id="Novo"]').click()
-    //     cy.get('button[id="metaComercialAlterarForm:btnCancelar"]').click()
-    //     cy.get('button[id="limpar"]').click()
-    // })
+    it(' Menu Cadastro - Meta Comercial', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuConsultores"]').click()
+        cy.get('li[id="menuform:btnMetaComercial"]').click()
+        cy.get('button[id="Pesquisar"]').click()
+        cy.get('button[id="Novo"]').click()
+        cy.get('button[id="metaComercialAlterarForm:btnCancelar"]').click()
+        cy.get('button[id="limpar"]').click()
+    })
     
-    // it(' Menu Cadastro - Importar Meta Comercial', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuConsultores"]').click()
-    //     cy.get('li[id="menuform:btnImportarMetaComercial"]').click()
-    // })
+    it(' Menu Cadastro - Importar Meta Comercial', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuConsultores"]').click()
+        cy.get('li[id="menuform:btnImportarMetaComercial"]').click()
+    })
     
-    // it(' Menu Cadastro - Dashboard Meta Comercial', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnMenuConsultores"]').click()
-    //     cy.get('li[id="menuform:btnMetaComercialDashboard"]').click()
-    // })
+    it(' Menu Cadastro - Dashboard Meta Comercial', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnMenuConsultores"]').click()
+        cy.get('li[id="menuform:btnMetaComercialDashboard"]').click()
+    })
 
-    // it(' Menu Cadastro - Cupom', () => {
-    //     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    //     cy.get('li[id="menuform:btnCupom"]').click()
-    // })
+    it(' Menu Cadastro - Cupom', () => {
+        cy.get('li[id="menuform:btnMenuCadastro"]').click()
+        cy.get('li[id="menuform:btnCupom"]').click()
+    })
 
     // it('Menu Associados - Aniversarios', () => {
     //     cy.get('li[id="menuform:btnMenuAssociado"]').click()
