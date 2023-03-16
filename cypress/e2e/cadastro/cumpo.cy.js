@@ -1,5 +1,7 @@
 ///<reference types="cypress"/>
 
+const moment = require("moment/moment");
+
 describe('EVEX7 test', () => {
 
     beforeEach(() => {
@@ -12,43 +14,61 @@ describe('EVEX7 test', () => {
         cy.url().should('eq', 'http://localhost:8080/sav-web-1.0/inicio.faces')
     })
 
-    context('Ações Basicas', () => {
-        it('Pesquisar Cupom', () => {
-            cy.acaoPesquisarCupom()
-        })
+    context('teste', ()=> {
+        const currentDate = moment().format("DD/MM/YYYY");
+        const currentSubtractDate = moment().subtract(1, 'days').format("DD/MM/YYYY");
 
-        it('Limpar Cupom', () => {
-            cy.acaoLimparCupom()
-        })
-    })
-
-    context('Cadastrar Cupom', () => {
-        const cupomDesconto = require('../../fixtures/cupomDesconto.json')
-        cupomDesconto.forEach(cupomDesconto => {
-            it('Cadastrar Cupom', () => {
-                cy.acaoCadastrarCupom()
-                cy.wait(800)
-                cy.get('label[id="j_idt407_label"]').click()
-                cy.get('li[data-label="Percentual de Desconto"]').click()
-                cy.wait(500)
-                cy.get('input[id="j_idt403"]').type(cupomDesconto.nome)
-                cy.get('input[id="j_idt418_input"]').click()
-                cy.get('input[id="j_idt418_input"]').type(cupomDesconto.dataLimite)
-                cy.get('input[id="valor"]').type(cupomDesconto.valor)
-                cy.get('input[id="j_idt422_input"]').click()
-                cy.get('input[id="j_idt422_input"]').type(cupomDesconto.dataFinalizacao)
-                cy.get('input[id="quantidade"]').type(cupomDesconto.quantidade)
-                cy.get('button[id="j_idt428"]')
-            })
-        })
-    })
-
-    context('Ação Editar Cupom', () => {
-        it('Limpar Cupom', () => {
-            cy.acaoEditarCupom()
+        it('teste', ()=>{
+            
             cy.wait(500)
-            cy.get('input[id="j_idt403"]').clear().type('Cypress Teste')
-            cy.get('input[id="quantidade"]').clear().type('5')
+            cy.get('.menu-button > .pi').click()
+            cy.wait(500)
+            cy.get('li[id="menuform:btnMenuCadastro"]').click()
+            cy.wait(500)
+            cy.get('li[id="menuform:btnCupom"]').click()
+            cy.wait(500)
+            cy.get('input[id="j_idt371_input"]').type(currentDate)
+            cy.get('input[id="j_idt373_input"]').type(currentSubtractDate)
         })
     })
+
+    // context('Ações Basicas', () => {
+    //     it('Pesquisar Cupom', () => {
+    //         cy.acaoPesquisarCupom()
+    //     })
+
+    //     it('Limpar Cupom', () => {
+    //         cy.acaoLimparCupom()
+    //     })
+    // })
+
+    // context('Cadastrar Cupom', () => {
+    //     const cupomDesconto = require('../../fixtures/cupomDesconto.json')
+    //     cupomDesconto.forEach(cupomDesconto => {
+    //         it('Cadastrar Cupom', () => {
+    //             cy.acaoCadastrarCupom()
+    //             cy.wait(800)
+    //             cy.get('label[id="j_idt407_label"]').click()
+    //             cy.get('li[data-label="Percentual de Desconto"]').click()
+    //             cy.wait(500)
+    //             cy.get('input[id="j_idt403"]').type(cupomDesconto.nome)
+    //             cy.get('input[id="j_idt418_input"]').click()
+    //             cy.get('input[id="j_idt418_input"]').type(cupomDesconto.dataLimite)
+    //             cy.get('input[id="valor"]').type(cupomDesconto.valor)
+    //             cy.get('input[id="j_idt422_input"]').click()
+    //             cy.get('input[id="j_idt422_input"]').type(cupomDesconto.dataFinalizacao)
+    //             cy.get('input[id="quantidade"]').type(cupomDesconto.quantidade)
+    //             cy.get('button[id="j_idt428"]')
+    //         })
+    //     })
+    // })
+
+    // context('Ação Editar Cupom', () => {
+    //     it('Limpar Cupom', () => {
+    //         cy.acaoEditarCupom()
+    //         cy.wait(500)
+    //         cy.get('input[id="j_idt403"]').clear().type('Cypress Teste')
+    //         cy.get('input[id="quantidade"]').clear().type('5')
+    //     })
+    // })
 })
