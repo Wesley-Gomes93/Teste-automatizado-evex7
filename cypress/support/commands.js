@@ -2176,6 +2176,12 @@ tarefaEvento.forEach(tarefaEvento => {
 })
 
 
+Cypress.Commands.add('acaoPesquisarDashboard', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuDashboardAssistencia"]').click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
 
 
 
