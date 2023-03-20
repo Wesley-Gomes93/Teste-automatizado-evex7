@@ -12,7 +12,9 @@ describe('EVEX7 test', () => {
         cy.get('.menu-button > .pi').click()
         cy.wait(500)
     })
+    
     context('Dashboard', () => {
+
         const currentDate = moment().format("DD/MM/YYYY");
         const currentSubtractDate = moment().subtract(90, 'days').format('DD/MM/YYYY');
         

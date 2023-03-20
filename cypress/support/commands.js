@@ -2175,12 +2175,37 @@ tarefaEvento.forEach(tarefaEvento => {
     })
 })
 
-
 Cypress.Commands.add('acaoPesquisarDashboard', () => {
     cy.get('li[id="menuform:btnMenuAssistencia"]').click()
     cy.get('li[id="menuform:btnMenuDashboardAssistencia"]').click()
     cy.get('button[id="pesquisar"]').click()
 })
+
+Cypress.Commands.add('acaoPesquisarAtendimentoParcial', () => {
+    cy.get('li[id="menuform:btnMenuAssociado"]').click()
+    cy.get('li[id="menuform:btnMenuAtendimentoParcial"]').click()
+})
+
+Cypress.Commands.add('acaoLimparAtendimentoParcial', () => {
+    cy.get('li[id="menuform:btnMenuAssociado"]').click()
+    cy.get('li[id="menuform:btnMenuAtendimentoParcial"]').click()
+})
+
+Cypress.Commands.add('acaoAniversario', () => {
+    cy.get('li[id="menuform:btnMenuAssociado"]').click()
+    cy.get('li[id="menuform:btnMenuAssociadoEmailAniversario"]').click()
+})
+
+Cypress.Commands.add('acaoServicoAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuServicoAssist"]').click()
+})
+
+Cypress.Commands.add('acaoSituacoesAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuSituacaoAssist"]').click()
+})
+
 
 
 
