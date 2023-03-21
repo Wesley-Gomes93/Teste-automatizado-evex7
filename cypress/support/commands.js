@@ -2206,6 +2206,36 @@ Cypress.Commands.add('acaoSituacoesAssistencia', () => {
     cy.get('li[id="menuform:btnMenuSituacaoAssist"]').click()
 })
 
+Cypress.Commands.add('acaoMotivoAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuMotivoAssist"]').click()
+})
+
+Cypress.Commands.add('acaoCondicoesAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuCondicaoVeiculo"]').click()
+})
+
+Cypress.Commands.add('acaoTipoAtendimentoAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuTipoAtendimento"]').click()
+})
+
+Cypress.Commands.add('acaoEventoAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuEventoAssist"]').click()
+})
+
+Cypress.Commands.add('acaoSupervisaoAcionamento', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuSupervisaoAcionamento"]').click()
+})
+
+Cypress.Commands.add('acaoSituacaoCat', () => {
+    cy.get('li[id="menuform:btnMenuCat"]').click()
+    cy.get('li[id="menuform:btnMenuSituacaoCat"]').click()
+})
+
 
 
 
