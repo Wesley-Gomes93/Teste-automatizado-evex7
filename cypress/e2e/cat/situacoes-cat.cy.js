@@ -35,7 +35,7 @@ describe('EVEX7 test', () => {
     })
 
     context('Acoes Basicas Tela Situacao Cat', () => {
-        it.only('Situacoes C.A.T - Cadastrar', () => {
+        it('Situacoes C.A.T - Cadastrar', () => {
             cy.acaoSituacaoCat()
             cy.get('button[id="j_idt362"]').click()
             cy.get('input[id="titulo"]').type('TESTE CYPRESS')
@@ -49,11 +49,26 @@ describe('EVEX7 test', () => {
             cy.get('input[id="qtdeHorasAmarelo"]').type('350')
             cy.get('li[data-item-label="ANÁLISE EXTERNA SOLICITADA [C] [FR]"]').scrollIntoView({ duration: 250 }).should('be.visible').then(() => { cy.wait(500) });
             cy.get('li[data-item-label="ANÁLISE EXTERNA SOLICITADA [C] [FR]"]').dblclick()
-            
+
             cy.get('li[data-item-label="GERAL - ANÁLISE TÉCNICA DEFINITIVA [C]"]').dblclick()
             cy.get('li[data-item-label="SOLICITAÇÕES - REGULADOR CAT [C]"]').scrollIntoView({ duration: 250 }).should('be.visible').then(() => { cy.wait(500) });
             cy.get('li[data-item-label="SOLICITAÇÕES - REGULADOR CAT [C]"]').dblclick()
             cy.get('button[id="btnSalvar"]').click()
+        })
+        it.only('Situacoes C.A.T - Cadastrar', () => {
+            cy.acaoSituacaoCat()
+            cy.get('button[id="tabelaResultadoPesquisa:0:j_idt389"]').click()
+            cy.get('input[id="titulo"]').type('TESTE CYPRESS')
+            cy.get('label[id="j_idt414_label"]').click()
+            cy.get('label[id="j_idt414_label"]').as('options').its('length', {log:true}).then(n => {
+                cy.get('@options', {log:true}).then($options => {
+                    const randomOptionIndex = Cypress._.random(n-1)
+                    const randomOptionText = $options[randomOptionIndex].text
+                    cy.get('select').select(n+1).click(randomOptionText)
+                })
+            })
+          
+            
         })
     })
 

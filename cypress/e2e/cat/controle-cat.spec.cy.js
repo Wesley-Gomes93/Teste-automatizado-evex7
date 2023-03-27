@@ -1,3 +1,5 @@
+///<reference types="cypress"/>
+
 describe('EVEX7 test', () => {
     beforeEach(() => {
         // funcao pra ser inicializada sempre antes de todos os testes, 
@@ -11,112 +13,78 @@ describe('EVEX7 test', () => {
         cy.get('.menu-button').should('be.visible').click()
     })
 
+    context('Ações Basicas na tela Controle C.A.T ', () => {
+        it('Controle C.A.T - Tela', () => {
+            cy.acaoControleCat()
+        })
 
-    it.skip('Menu Assistência - Condição Assistência', () => {
-        cy.get('li [id="menuform:btnMenuCat"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li [id="menuform:btnMenuCat"]').click()
-        cy.wait(500)
-        cy.wait(450)
-        cy.get('li[id="menuform:btnMenuControleCat"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li[id="menuform:btnMenuControleCat"]').click()
-        cy.wait(500)
+        it('Controle C.A.T - Pesquisar', () => {
+            cy.acaoControleCat()
+            cy.get('label[id="j_idt362"]').click()
+            cy.get('li[data-label="Universo AGV"]').click()
+            cy.get('label[id="tipoSindicancia_label"]').click()
+            cy.get('li[data-label="Colisões"]').click()
+            cy.get('button[id="pesquisar"]').click()
+        })
+        
+        it('Controle C.A.T - Limpar', () => {
+            cy.acaoControleCat() 
+            cy.get('label[id="empresa_label"]').click()
+            cy.get('li[data-label="Universo AGV"]').click()
+            cy.get('label[id="tipoSindicancia_label"]').click()
+            cy.get('li[data-label="Colisões"]').click()
+            cy.get('button[id="pesquisar"]').click()
+            cy.wait(7500)
+            cy.get('button[id="limpar"]').click()
 
-        cy.wait(500)
-        cy.get('label[id="tipoSindicancia_label"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('label[id="tipoSindicancia_label"]').click()
-        cy.wait(450)
-        cy.get('li[data-label="Colisões"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li[data-label="Colisões"]').click()
-        cy.wait(450)
-
-        cy.wait(500)
-        cy.get('button[id="pesquisar"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('button[id="pesquisar"]').click()
-        cy.wait(450)
-
-        cy.wait(450).get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.wait(450).get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').click()
-        cy.wait(500)
-        cy.get('button[id="outrasAcoes_button"]').scrollIntoView({ duration: 250 }).should('be.visible').then(() => { cy.wait(500) });
-        cy.get('button[id="outrasAcoes_button"]').click()
-        cy.wait(500)
-        cy.get('a[id="btnAbrirSinistroAcompanhamentoContato"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('a[id="btnAbrirSinistroAcompanhamentoContato"]').click()
-        cy.wait(500)
-        cy.get('button[id="acompanhamentoContatoForm:acoes_button"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('button[id="acompanhamentoContatoForm:acoes_button"]').click()
-        cy.wait(500)
-        cy.get('a[id="acompanhamentoContatoForm:incluirAcompanhamentoContato"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('a[id="acompanhamentoContatoForm:incluirAcompanhamentoContato"]').click()
-        cy.wait(500)
-        cy.get('label[id="acompanhamentoContatoForm:situacaoAlteracaoContatoModal_label"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('label[id="acompanhamentoContatoForm:situacaoAlteracaoContatoModal_label"]').click()
-        cy.wait(500)
-        cy.get('li[data-label="REGULAGEM – AUTORIZADO - SOLICITADO COMPLEMENTO"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li[data-label="REGULAGEM – AUTORIZADO - SOLICITADO COMPLEMENTO"]').click()
-        cy.wait(500)
-
-        cy.wait(250).get('textarea[name="acompanhamentoContatoForm:j_idt2231"]').type('kasljfasdkfalsd fasd jfasdkhfajsdfh asdljkfhaljks h1209652349657234 65 237456 2 73465 92435 872654987234562 TESTE FINAL CYPRESS')
-        cy.wait(500)
-
-        cy.get('button[id="acompanhamentoContatoForm:btnSalvarSAContatoModal"]').click()
-
-        cy.get('button[id="enviarTermoConfirmar"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('button[id="enviarTermoConfirmar"]').click()
-        cy.wait(500)
-        cy.get('button[id="acompanhamentoContatoForm:voltaPesquisa"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('button[id="acompanhamentoContatoForm:voltaPesquisa"]').click()
-        cy.wait(500)
-
-        cy.get("#acompanhamentoContatoModalDialog > div.ui-dialog-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-top > a").click()
-
+        })
     })
 
-    it('Menu Assistência - Condição Assistência - Historico', () => {
-        cy.get('li [id="menuform:btnMenuCat"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li [id="menuform:btnMenuCat"]').click()
-        cy.wait(500)
-        cy.wait(450)
-        cy.get('li[id="menuform:btnMenuControleCat"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li[id="menuform:btnMenuControleCat"]').click()
-        cy.wait(500)
+    context('Ações Controle C.A.T - ', () => {
+        it('ontrole C.A.T - Analisar', () => {
+            cy.acaoControleCat() 
+            cy.get('label[id="empresa_label"]').click()
+            cy.get('li[data-label="AGV Brasil"]').click()
+            cy.get('label[id="tipoSindicancia_label"]').click()
+            cy.get('li[data-label="Colisões"]').click()
+            cy.get('button[id="pesquisar"]').click()
+            cy.wait(8500)
+            cy.get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').click()
+            //pag 2
+            cy.get('a[href="#tabs:j_idt1366"]').click()
+            cy.get('textarea[id="tabs:j_idt1440"]').type('8743958723495209347952')
+            //pag 3
+            cy.get('a[href="#tabs:j_idt1523"]').click()
+            cy.get('label[for="tabs:j_idt1530:0"]').click()
+            cy.get('label[for="tabs:j_idt1537:0"]').click()
+            cy.get('label[for="tabs:j_idt1544:1"]').click()
+            cy.get('label[for="tabs:j_idt1551:0"]').click()
+            //pag 4
+            cy.get('a[href="#tabs:j_idt1643"]').click()
+            //pag 5
+            cy.get('a[href="#tabs:j_idt1933"]').click()
+            cy.get('textarea[id="tabs:j_idt1937"]').type('çdlkjasçkldjaç ashdçasdhjkals 21738412 teste')     
+        })
 
-        cy.wait(500)
-        cy.get('label[id="tipoSindicancia_label"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('label[id="tipoSindicancia_label"]').click()
-        cy.wait(450)
-        cy.get('li[data-label="Colisões"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('li[data-label="Colisões"]').click()
-        cy.wait(450)
-
-        cy.wait(500)
-        cy.get('button[id="pesquisar"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.get('button[id="pesquisar"]').click()
-        cy.wait(450)
-
-        cy.wait(450).get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').should('be.visible').then(() => { cy.wait(500) });
-        cy.wait(450).get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').click()
-        cy.wait(500)
-        cy.get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').scrollIntoView({ duration: 250 }).should('be.visible').then(() => { cy.wait(500) });
-        cy.get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').click()
-        cy.wait(500)
-        cy.get('a[id="btnHistorico"]').scrollIntoView({ duration: 250 }).should('be.visible').then(() => { cy.wait(500) });
-        cy.get('a[id="btnHistorico"]').click()
-        cy.wait(500)
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2363_header").should('be.visible').then(() => { cy.wait(500) });
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2363_header").click()
-        cy.wait(500)
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2408_header").should('be.visible').then(() => { cy.wait(500) });
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2408_header").click()
-        cy.wait(500)
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2444_header").should('be.visible').then(() => { cy.wait(500) });
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2444_header").click()
-        cy.wait(500)
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2478_header").should('be.visible').then(() => { cy.wait(500) });
-        cy.get("#formHistorico\\:j_idt2362\\:j_idt2478_header").click()
-        cy.wait(500)
-        cy.get("#historicoDialog > div.ui-dialog-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-top > a > span").scrollIntoView({ duration: 250 }).should('be.visible').then(() => { cy.wait(500) });
-        cy.get("#historicoDialog > div.ui-dialog-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-top > a > span").click()
-        cy.wait(500)
+        it.only('ontrole C.A.T - Analisar - Acompanhar Andamento ', () => {
+            cy.acaoControleCat() 
+            cy.get('label[id="empresa_label"]').click()
+            cy.get('li[data-label="AGV Brasil"]').click()
+            cy.get('label[id="tipoSindicancia_label"]').click()
+            cy.get('li[data-label="Colisões"]').click()
+            cy.get('button[id="pesquisar"]').click()
+            cy.wait(15000)
+            cy.get('button[id="tabelaResultadoPesquisa:0:btnAnalisar"]').click()
+            cy.wait(500)
+            cy.get('a[href="#tabs:j_idt1643"]').click()
+            cy.get('button[id="outrasAcoes_button"]').click()
+            cy.get('a[id="btnAbrirSinistroAcompanhamentoContato"]').click()
+            cy.get('button[id="acompanhamentoContatoForm:acoes_button"]').click()
+            cy.get('a[id="acompanhamentoContatoForm:incluirAcompanhamentoContato"]').click()
+            cy.get('label[id="acompanhamentoContatoForm:situacaoAlteracaoContatoModal_label"]').click()
+            cy.get('button[id="acompanhamentoContatoForm:voltaPesquisa"]').click()
+        })
     })
+
+   
 })

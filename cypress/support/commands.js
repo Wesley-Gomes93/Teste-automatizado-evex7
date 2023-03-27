@@ -2236,6 +2236,18 @@ Cypress.Commands.add('acaoSituacaoCat', () => {
     cy.get('li[id="menuform:btnMenuSituacaoCat"]').click()
 })
 
+Cypress.Commands.add('acaoControleCat', () => {
+    cy.get('li[id="menuform:btnMenuCat"]').click()
+    cy.get('li[id="menuform:btnMenuControleCat"]').click()
+})
+
+Cypress.Commands.add('acaoControleBasePrestador', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuSalvados"]').click()
+    cy.wait(500)
+    cy.get('li[id="menuform:btnControleBasePrestador"]').click()
+})
+
 
 
 
