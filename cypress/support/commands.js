@@ -446,53 +446,35 @@ Cypress.Commands.add('acaoUsuarioHoraExtra', () => {
 })
 
 Cypress.Commands.add('acaoLimparCupom', () => {
-    cy.wait(500)
     cy.get('.menu-button > .pi').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnCupom"]').click()
-    cy.wait(500)
-    cy.get('button[id="j_idt377"]').click()
+    cy.get('button[id="j_idt384"]').click()
 })
 
 Cypress.Commands.add('acaoCadastrarCupom', () => {
-    cy.wait(500)
     cy.get('.menu-button > .pi').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnCupom"]').click()
-    cy.wait(500)
-    cy.get('button[id="j_idt376"]').click()
+    cy.get('button[id="j_idt383"]').click()
 })
 
 Cypress.Commands.add('acaoPesquisarCupom', () => {
-    cy.wait(500)
     cy.get('.menu-button > .pi').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnCupom"]').click()
-    cy.wait(500)
-    cy.get('button[id="j_idt375"]').click()
+    cy.get('button[id="j_idt382"]').click()
 })
 
 Cypress.Commands.add('acaoEditarCupom', () => {
-    cy.wait(500)
     cy.get('.menu-button > .pi').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnMenuCadastro"]').click()
-    cy.wait(500)
     cy.get('li[id="menuform:btnCupom"]').click()
-    cy.wait(500)
-    cy.get('button[id="j_idt375"]').click()
-    cy.wait(500)
+    cy.get('button[id="tabelaCupom:0:j_idt405"]').click()
     cy.get('button[id="tabelaCupom:0:j_idt398"]').click()
 })
 
 Cypress.Commands.add('acaoConsultarAssociado', () => {
-    cy.wait(500)
     cy.get('li [id="menuform:btnMenuAssociado"]').should('be.visible')
     cy.get('li [id="menuform:btnMenuAssociado"]').click()
     cy.wait(500)
@@ -2247,6 +2229,13 @@ Cypress.Commands.add('acaoControleBasePrestador', () => {
     cy.wait(500)
     cy.get('li[id="menuform:btnControleBasePrestador"]').click()
 })
+
+Cypress.Commands.add('acaoCupom', () => {
+    cy.get('li[id="menuform:btnMenuCadastro"]').click()
+    cy.get('li[id="menuform:btnCupom"]').click()
+})
+
+
 
 
 
