@@ -1,4 +1,5 @@
 ///<reference types="cypress"/>
+import 'cypress-file-upload';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
@@ -2233,6 +2234,16 @@ Cypress.Commands.add('acaoControleBasePrestador', () => {
 Cypress.Commands.add('acaoCupom', () => {
     cy.get('li[id="menuform:btnMenuCadastro"]').click()
     cy.get('li[id="menuform:btnCupom"]').click()
+})
+
+Cypress.Commands.add('acaoControleEventoJuridico', () => {
+    cy.get('li[id="menuform:btnMenuJuridico"]').click()
+    cy.get('li[id="menuform:btnMenuControleEventoJuridico"]').click()
+})
+
+Cypress.Commands.add('acaoControleEventoJuridico', () => {
+    cy.get('li[id="menuform:btnMenuJuridico"]').click()
+    cy.get('li[id="menuform:btnMenuControleProcessos"]').click()
 })
 
 

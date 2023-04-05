@@ -37,7 +37,7 @@ describe('EVEX7 test', () => {
             cy.wait(500)
         })
 
-        it.skip('Juridico - Consultoria Juridica - Ações - Incluir Resposta ', () => {
+        it('Juridico - Consultoria Juridica - Ações - Incluir Resposta ', () => {
             cy.acaoPesquisarConsultoriaJuridica()
             cy.get('button[id="pesquisarVeiculo"]').click()
             cy.get('button[id="tabelaSolicitacao:0:btnAnalisar"]').click()

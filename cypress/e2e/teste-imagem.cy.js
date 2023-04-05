@@ -1,8 +1,6 @@
 ///<reference types="cypress"/>
 import 'cypress-file-upload';
 
-
-
 describe('EVEX7 test', () => {
 
     beforeEach(() => {
@@ -19,15 +17,42 @@ describe('EVEX7 test', () => {
 
     })
 
+    // context('', () => {
+    //     // const filePath = '../fixtures/alex.png'
+    //     it('colocando imgaem', () => {
+    //         cy.get('li[id="menuform:btnMenuEventos"]').click()
+    //         cy.get('li[id="menuform:btnMenuControleEventos"]').click()
+    //         cy.get('button[id="incluirSinistro"]').click()
+    //         cy.get('button[id="btnCliente"]').click()
+    //         cy.get('input[id="placaCliente"]').type('FFA2645')
+    //         cy.get('button[id="btnPesquisar"]').click()
+    //         cy.wait(3500)
+    //         cy.get('#j_idt4976 > .ui-button-text').click()
+    //         cy.get('label[id="listTipoArquivoEditar_label"]').click()
+    //         cy.get('li[data-label="CRLV (Obrigatório)"]').click()
+    //         cy.get('#fileUploadEditar_label').click()
+    //         cy.get('#fileUploadEditar_label').selectFile('../image/alex.png', {force:true})
+    //     })
+    // })
+
     context('', () => {
         it('colocando imgaem', () => {
-            cy.get('li[id="menuform:btnMenuVeiculo"]').click()
-            cy.get('li[id="menuform:btnMenuConsultarVeiculo"]').click()
-            cy.get('input[id="autocompletevar_input"]').type('HKD4493')
-            cy.get('li[data-item-label="HKD4493 (HKD4E93) - GILBERT VINICIUS FERREIRA DOS SANTOS - 101.441.756-22 - Ativo"]').click()
-            cy.get('button[id="tabelaVeiculo:0:j_idt437"]').click()
-            cy.get('button[id="incluirVistoria"]').click()
-            cy.get('#videoAndFileUpload_label').click().click()
+            cy.get('li[id="menuform:btnMenuEventos"]').click()
+            cy.get('li[id="menuform:btnMenuControleEventos"]').click()
+            cy.get('button[id="incluirSinistro"]').click()
+            cy.get('button[id="btnCliente"]').click()
+            cy.get('input[id="placaCliente"]').type('FFA2645')
+            cy.get('button[id="btnPesquisar"]').click()
+            cy.wait(3500)
+            cy.get('#j_idt4976 > .ui-button-text').click()
+            cy.get('label[id="listTipoArquivoEditar_label"]').click()
+            cy.get('li[data-label="CRLV (Obrigatório)"]').click()
+            cy.get('#fileUploadEditar_label').click()
+            cy.readFile('images/alex.png', null).then((file) => {
+                expect(Cypress.Buffer.isBuffer(file)).to.be.true
+                // Do something with `file` Buffer here
+              })
+
         })
     })
 })
