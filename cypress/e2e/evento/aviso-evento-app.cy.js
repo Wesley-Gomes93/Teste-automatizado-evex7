@@ -15,7 +15,7 @@ describe('EVEX7 test', () => {
     })
     
     context('Tela Avisar evento APP', () => {
-        const currentDate = moment().format("DD/MM/YYYY");
+        const currentDate = moment().add(5, 'days').format("DD/MM/YYYY");
 
         it('Acoes basicas na tela Avisar evento APP - Pesquisar', () => {
             cy.acaoAvisarEventoApp()

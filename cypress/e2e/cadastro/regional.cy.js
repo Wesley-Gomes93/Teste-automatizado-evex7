@@ -38,7 +38,7 @@ describe('EVEX7 test', () => {
     })
 
     context('cadastras uma regional', () => {
-        const regional = require('../../fixtures/regional.json')
+        var regional = require('../../fixtures/regional.json')
         regional.forEach(regional => {
             it.only('Regional - Novo', () => {
                 cy.acaoPesquisarRegional()

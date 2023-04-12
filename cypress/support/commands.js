@@ -2278,6 +2278,16 @@ Cypress.Commands.add('acaoRecorrencia', () => {
     cy.get('li[id="menuform:btnRecorrenciaConsultor"]').click()
 })
 
+Cypress.Commands.add('acaoControleOuvidoria', () => {
+    cy.get('li[id="menuform:btnOuvidoria"]').click()
+    cy.get('li[id="menuform:btnControleOuvidoria"]').click()
+})
+
+Cypress.Commands.add('acaoEventoAreaPrestador', () => {
+    cy.get('li[id="menuform:btAreaPrestador"]').click()
+    cy.get('li[id="menuform:btnPagamentosPrestador"]').click()
+})
+
 
 
 
