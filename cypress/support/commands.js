@@ -2246,6 +2246,38 @@ Cypress.Commands.add('acaoControleEventoJuridico', () => {
     cy.get('li[id="menuform:btnMenuControleProcessos"]').click()
 })
 
+Cypress.Commands.add('acaoFechamentoAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuAssistencia"]').click()
+    cy.get('li[id="menuform:btnMenuFechamentoAssist"]').click()
+})
+
+Cypress.Commands.add('acaoMotivoNegativa', () => {
+    cy.get('li[id="menuform:btnMenuCat"]').click()
+    cy.get('li[id="menuform:btnMotivosNegativasSindicancia"]').click()
+})
+
+Cypress.Commands.add('acaoLinhaTempoCat', () => {
+    cy.get('li[id="menuform:btnMenuCat"]').click()
+    cy.get('li[id="menuform:btnMenuLinhaTempoCat"]').click()
+})
+
+Cypress.Commands.add('acaoControleSalvadosDepreciacao', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuSalvados"]').click()
+    cy.get('li[id="menuform:btnDepreciacao"]').click()
+})
+
+Cypress.Commands.add('acaoAvisarEventoApp', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuAvisoEventoApp"]').click()
+})
+
+Cypress.Commands.add('acaoRecorrencia', () => {
+    cy.get('li[id="menuform:btnMenuFinanceiro"]').click()
+    cy.get('li[id="menuform:j_idt127"]').click()
+    cy.get('li[id="menuform:btnRecorrenciaConsultor"]').click()
+})
+
 
 
 
