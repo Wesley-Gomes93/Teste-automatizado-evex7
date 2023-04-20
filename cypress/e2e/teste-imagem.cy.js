@@ -15,26 +15,10 @@ describe('EVEX7 test', () => {
         cy.get('.menu-button > .pi').click()
         cy.wait(500)
 
+
     })
 
-    // context('', () => {
-    //     // const filePath = '../fixtures/alex.png'
-    //     it('colocando imgaem', () => {
-    //         cy.get('li[id="menuform:btnMenuEventos"]').click()
-    //         cy.get('li[id="menuform:btnMenuControleEventos"]').click()
-    //         cy.get('button[id="incluirSinistro"]').click()
-    //         cy.get('button[id="btnCliente"]').click()
-    //         cy.get('input[id="placaCliente"]').type('FFA2645')
-    //         cy.get('button[id="btnPesquisar"]').click()
-    //         cy.wait(3500)
-    //         cy.get('#j_idt4976 > .ui-button-text').click()
-    //         cy.get('label[id="listTipoArquivoEditar_label"]').click()
-    //         cy.get('li[data-label="CRLV (Obrigatório)"]').click()
-    //         cy.get('#fileUploadEditar_label').click()
-    //         cy.get('#fileUploadEditar_label').selectFile('../image/alex.png', {force:true})
-    //     })
-    // })
-
+    
     context('', () => {
         it('colocando imgaem', () => {
             cy.get('li[id="menuform:btnMenuEventos"]').click()
@@ -44,15 +28,21 @@ describe('EVEX7 test', () => {
             cy.get('input[id="placaCliente"]').type('FFA2645')
             cy.get('button[id="btnPesquisar"]').click()
             cy.wait(3500)
-            cy.get('#j_idt4976 > .ui-button-text').click()
+            cy.get('label[id="motivoSinistro_label"]').click()
+            cy.get('li[data-label="Colisão"]').click()
+            //linha abaxio é para anexar uma imagem 
+            cy.get('button[id="j_idt4977"]')
+            .contains("Incluir arquivo")
+            .click()
+            
             cy.get('label[id="listTipoArquivoEditar_label"]').click()
-            cy.get('li[data-label="CRLV (Obrigatório)"]').click()
-            cy.get('#fileUploadEditar_label').click()
-            cy.readFile('images/alex.png', null).then((file) => {
-                expect(Cypress.Buffer.isBuffer(file)).to.be.true
-                // Do something with `file` Buffer here
-              })
+            cy.get('li[data-label="CNH"]').click()
 
+            cy.get('#fileUploadEditar_label')
+            .contains("Selecione o Arquivo")
+            .click()
+            cy.get('[type="file"]')
+            .attachFile("alex.png")
         })
     })
 })

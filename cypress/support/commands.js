@@ -2288,6 +2288,11 @@ Cypress.Commands.add('acaoEventoAreaPrestador', () => {
     cy.get('li[id="menuform:btnPagamentosPrestador"]').click()
 })
 
+Cypress.Commands.add('acaoConsultarVeiculo', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuConsultarVeiculo"]').click()
+})
+
 
 
 
