@@ -25,5 +25,12 @@ describe('EVEX7 test', () => {
             cy.get('button[id="limparBotao"]').click()
         })
     })
+    context('Anexar documentacao', () => {
+        it('Pesquisar', () => {
+            cy.acaoEventoAreaPrestador()
+            cy.get('button[id="pesquisarBotao"]').click()
+        })
+        
+    })
 })
 

@@ -23,6 +23,7 @@ describe('EVEX7 test', () => {
             cy.get('input[id="autocompletevar_input"]').type('HKD4493')
             cy.get('li[data-item-label="HKD4493 (HKD4E93) - GILBERT VINICIUS FERREIRA DOS SANTOS - 101.441.756-22 - Ativo"]').click()
         })
+        
         it('Registrar contato', () => {
             cy.acaoConsultarVeiculo()
             cy.get('input[id="autocompletevar_input"]').click()
