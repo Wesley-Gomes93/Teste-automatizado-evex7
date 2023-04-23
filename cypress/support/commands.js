@@ -2293,6 +2293,11 @@ Cypress.Commands.add('acaoConsultarVeiculo', () => {
     cy.get('li[id="menuform:btnMenuConsultarVeiculo"]').click()
 })
 
+Cypress.Commands.add('acaoSimulacaoWeb', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuSimulacaoWeb"]').click()
+})
+
 
 
 
