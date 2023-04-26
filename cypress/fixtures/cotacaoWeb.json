@@ -1,9 +1,15 @@
 [
+    
     {
-        "nomeProponente" : "JJ",
-        "email" : "jjflamimi@gmail.com ",
-        "celular" : "3198876654267",
-        "placa" : "JJJ9090"
-     
+        "nomeProponente" : "Sampaoli",
+        "email" : "sampaoliflamimi@gmail.com ",
+        "celular" : "31973354267",
+        "placa" : "GGG1234",
+        "cpf": "101.868.510-30",
+        "cnh": "489739287492",
+        "docIdentidade": "284728349727",
+        "telefoneFixo": "9833336655",
+        "renavam": "89811256431",
+        "chassi": "98724529346598723" 
     }
 ]
