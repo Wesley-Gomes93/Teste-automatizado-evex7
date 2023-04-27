@@ -2298,9 +2298,9 @@ Cypress.Commands.add('acaoSimulacaoWeb', () => {
     cy.get('li[id="menuform:btnMenuSimulacaoWeb"]').click()
 })
 
-Cypress.Commands.add('acaoAprovarVeiculo', () => {
-    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
-    cy.get('li[id="menuform:btnMenuAprovarVeiculo"]').click()
+Cypress.Commands.add('acaoControleTicketPerformance', () => {
+    cy.get('li[id="menuform:btnMenuPerformance"]').click()
+    cy.get('li[id="menuform:btnControleTicketsPerformance"]').click()
 })
 
 
