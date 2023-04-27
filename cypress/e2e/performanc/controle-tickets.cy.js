@@ -18,4 +18,11 @@ describe("EVEX7 test", () => {
     cy.get(".menu-button > .pi").click();
     cy.wait(500);
   });
+
+  context('Tela Controle de Ticket', () => {
+    it('Controle de ticket', () =>{
+
+    })
+  })
+
 })
