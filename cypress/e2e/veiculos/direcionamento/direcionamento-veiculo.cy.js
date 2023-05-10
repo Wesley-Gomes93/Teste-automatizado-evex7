@@ -1,0 +1,48 @@
+///<reference types="cypress"/>
+import 'cypress-file-upload';
+const moment = require("moment/moment");
+
+
+describe('EVEX7 test', () => {
+
+    beforeEach(() => {
+        // funcao pra ser inicializada sempre antes de todos os testes, 
+        cy.clearLocalStorage()
+        cy.viewport(1440, 900);
+        cy.visit('/')
+        cy.get('#loginForm h4').should('have.text', 'Seja bem-vindo ao EVEX7!')
+        cy.login(Cypress.env('loginInpt'), Cypress.env('pwd'))
+        cy.url().should('eq', 'http://localhost:8080/sav-web-1.0/inicio.faces')
+        cy.get('.menu-button > .pi').should('be.visible').then(() => { cy.wait(500) });
+        cy.get('.menu-button > .pi').click()
+        cy.wait(500)
+    })
+
+    context('Tela direcionamento veículo', () => {
+        it('Direcionamento veículo - Pesquisar',  () =>{
+            cy.acaoDirecionamentoVeiculo()
+            cy.get('button[id="pesquisar"]').click()
+        })
+        
+        it('Direcionamento veículo - Consultar',  () =>{
+            cy.acaoDirecionamentoVeiculo()
+            cy.get('button[id="pesquisar"]').click()
+            cy.wait(8500)
+            cy.get('button[id="tabelaResultadoPesquisa:0:j_idt451"]').should('be.visible').click()
+        })
+        
+        it('Direcionamento veículo - Troca de situação',  () =>{
+            cy.acaoDirecionamentoVeiculo()
+            cy.get('button[id="pesquisar"]').click()
+            cy.wait(8500)
+            cy.get('button[id="tabelaResultadoPesquisa:0:j_idt453"]').should('be.visible').click()
+        })
+        
+        it('Direcionamento veículo - Sinalizar devolução',  () =>{
+            cy.acaoDirecionamentoVeiculo()
+            cy.get('button[id="pesquisar"]').click()
+            cy.wait(8500)
+            cy.get('button[id="tabelaResultadoPesquisa:1:j_idt452"]').should('be.visible').click()
+        })
+    })
+})

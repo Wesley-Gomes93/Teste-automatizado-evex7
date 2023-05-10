@@ -16,16 +16,10 @@ describe('EVEX7 test', () => {
         cy.wait(500)
     })
 
-    context('Tela Aprovar Veiculo', () => {
-        it('Nova Simulacao - Pesquisar ', () => {
-            cy.acaoAprovarVeiculo()
-            cy.get('input[id="placa"]').type('JJJ9090')
-            cy.get('label[id="stBusca_label"]').click()
-            cy.get('li[id="stBusca_5"]').click()
-            cy.get('button[id="pesquisarVeiculo"]').click()
-            cy.get('button[id="tabelaVeiculo:0:j_idt492"]').click()
-            cy.wait(500)
-            cy.get('a[id="tabView:dataTableChecklistAssociado:0:j_idt1139"]').click()
+    context('Tela Supervisao Aprovacao', () => {
+        it('Supervisao Aprovacao', () => {
+            cy.acaoSupervisaoAprovacao()
+            cy.get('button[id="pesquisar"]').click()            
         })
     })
 })

@@ -2303,6 +2303,60 @@ Cypress.Commands.add('acaoControleTicketPerformance', () => {
     cy.get('li[id="menuform:btnControleTicketsPerformance"]').click()
 })
 
+Cypress.Commands.add('acaoNegativaAutomatica', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuNegativaAutomatica"]').click()
+})
+
+Cypress.Commands.add('acaoSupervisaoAprovacao', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuDistAprovacao"]').click()
+    cy.get('li[id="menuform:btnMenuSupervisaoAprovacao"]').click()
+})
+
+Cypress.Commands.add('acaoControleAnalista', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuDistAprovacao"]').click()
+    cy.get('li[id="menuform:btnMenuControleAnalistas"]').click()
+})
+
+Cypress.Commands.add('acaoConsultarSituacao', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuConsultas"]').click()
+    cy.get('li[id="menuform:btnMenuConsultarSituacao"]').click()
+})
+
+Cypress.Commands.add('acaoConsultarSituacaoEventoAssistencia', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuConsultas"]').click()
+    cy.get('li[id="menuform:btnMenuConsultarSituacaoEnvio"]').click()
+})
+
+Cypress.Commands.add('acaoConsultarMotivoReprovacao', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuConsultas"]').click()
+    cy.get('li[id="menuform:btnMenuConsultaMotivoReprovacao"]').click()
+})
+
+Cypress.Commands.add('acaoSituacoesDirecionamento', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuDirecionamento"]').click()
+    cy.get('li[id="menuform:btnMenuSituacaoDirecionamento"]').click()
+})
+
+Cypress.Commands.add('acaoDirecionamentoVeiculo', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuDirecionamento"]').click()
+    cy.get('li[id="menuform:btnMenuDirecionamentoVeiculo"]').click()
+})
+
+Cypress.Commands.add('acaoControleSolicitacoes', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuRastreador"]').click()
+    cy.get('li[id="menuform:btnMenuSolicitacoesRastreador"]').click()
+    cy.get('li[id="menuform:btnMenuControleSolicitacoesRastreador"]').click()
+})
+
 
 
 
