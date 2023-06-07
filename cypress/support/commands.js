@@ -2357,6 +2357,61 @@ Cypress.Commands.add('acaoControleSolicitacoes', () => {
     cy.get('li[id="menuform:btnMenuControleSolicitacoesRastreador"]').click()
 })
 
+Cypress.Commands.add('acaoControleSolicitacoesCcx', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuRastreador"]').click()
+    cy.get('li[id="menuform:btnMenuSolicitacoesRastreador"]').click()
+    cy.get('li[id="menuform:btnMenuControleSolicitacaoRastreadorCCX"]').click()
+})
+
+Cypress.Commands.add('acaoSituacaoRatreador', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuRastreador"]').click()
+    cy.get('li[id="menuform:btnMenuSolicitacoesRastreador"]').click()
+    cy.get('li[id="menuform:btnMenuSituacaoRastreador"]').click()
+})
+
+Cypress.Commands.add('acaoRastreador', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuRastreador"]').click()
+    cy.get('li[id="menuform:btnMenuEstque"]').click()
+    cy.get('li[id="menuform:btnMenuRastreadorPesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoVeiculoSemPlaca', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuVeiculoSemPlacaInformada"]').click()
+    cy.get('button[id="pesquisarVeiculo"]').click()
+})
+
+Cypress.Commands.add('acaoFilaDesconto', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuFilaDesconto"]').click()
+    cy.get('button[id="pesquisar"]').click()
+})
+
+Cypress.Commands.add('acaoReservaPreferencia', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuReservaPreferencia"]').click()
+    cy.get('button[id="tabReserva:pesquisarBotao"]').click()
+})
+
+Cypress.Commands.add('acaoReservaPreferencia', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuReintegracao"]').click()
+    cy.get('button[id="pesquisarVeiculo"]').click()
+})
+
+Cypress.Commands.add('acaoAutorizacaoPagamento', () => {
+    cy.get('li[id="menuform:btnMenuEventos"]').click()
+    cy.get('li[id="menuform:btnMenuAutorizacaoPagamentoEvento"]').click()
+})
+
+Cypress.Commands.add('acaoNegativaVeiculo', () => {
+    cy.get('li[id="menuform:btnMenuVeiculo"]').click()
+    cy.get('li[id="menuform:btnMenuNegativaVeiculo"]').click()
+})
+
 
 
 
